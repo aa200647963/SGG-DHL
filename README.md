@@ -24,7 +24,7 @@ cp ./maskrcnn_benchmark/modeling/roi_heads/relation_head/loss.py ./checkpoints/$
 cp ./scripts/train.sh ./checkpoints/${MODEL_NAME}/
 cp ./maskrcnn_benchmark/modeling/roi_heads/relation_head/relation_head.py ./checkpoints/${MODEL_NAME}
 
-python \
+python -u -m torch.distributed.launch --master_port 19696 --nproc_per_node=$NUM_GUP \
 tools/relation_train_net.py \
 --config-file "configs/e2e_relation_X_101_32_8_FPN_1x.yaml" \
 MODEL.ROI_RELATION_HEAD.USE_GT_BOX True \
