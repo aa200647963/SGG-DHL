@@ -1,15 +1,23 @@
 # Dual-branch Hybrid Learning Network for Unbiased Scene Graph Generation
+
 This repository contains code for the paper ['Dual-branch Hybrid Learning Network for Unbiased Scene Graph Generation'](https://arxiv.org/abs/2207.07913).
 
 ## Installation
+
 Check [INSTALL.md](./INSTALL.md) for installation instructions.
+
 ## Dataset
+
 Check [DATASET.md](./DATASET.md) for instructions of dataset preprocessing.
 
 ## Device
+
 All our experiments are conducted on one NVIDIA GeForce RTX 3090, if you wanna run it on your own device, make sure to follow distributed training instructions in [Scene-Graph-Benchmark.pytorch](https://github.com/KaihuaTang/Scene-Graph-Benchmark.pytorch).
+
 ## Train
+
 We provide scripts for training the models
+
 ```
 #!/usr/bin/env bash
 export PYTHONPATH=/home/zhengchaofan/lib/apex:/home/zhengchaofan/lib/cocoapi:/home/zhengchaofan/code/Scene-Graph-Benchmark.pytorch-master=:$PYTHONPATH
@@ -46,7 +54,9 @@ SOLVER.PRE_VAL False \
 ```
 
 ## Test
+
 We provide scripts for testing the models
+
 ```
 #!/usr/bin/env bash
 # export PYTHONPATH=/home/chaofan/lib/apex:/home/chaofan/lib/cocoapi:/home/chaofan/myCode/Scene-Graph-Benchmark.pytorch-master=:$PYTHONPATH
@@ -69,8 +79,19 @@ python \
         TEST.ALLOW_LOAD_FROM_CACHE False \
 ```
 
+## Pre-trained Model
+
+|         Model         | R@20  | R@50  | R@100 | mR@20 | mR@50 | mR@100 |                         Google Drive                         |
+| :-------------------: | :---: | :---: | :---: | :---: | :---: | :----: | :----------------------------------------------------------: |
+| Transformer (PredCls) | 42.77 | 49.79 | 51.78 | 34.22 | 40.62 | 42.91  | [link](https://drive.google.com/drive/folders/1qZ1AcnN2NjDEcRt7YReuqOsXch3DE3I1?usp=sharing) |
+
+
+
 ## Help
+
 Be free to contact me (`zheng_chaofan@foxmail.com`) if you have any questions!
 
 ## Acknowledgement
+
 The code is implemented based on [Scene-Graph-Benchmark.pytorch](https://github.com/KaihuaTang/Scene-Graph-Benchmark.pytorch).
+
